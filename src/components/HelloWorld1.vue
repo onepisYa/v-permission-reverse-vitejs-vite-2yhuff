@@ -2,14 +2,14 @@
  * @Author: your name
  * @Date: 2022-05-13 11:20:13
  * @LastEditors: onepisYa pis1@qq.com
- * @LastEditTime: 2022-05-14 23:13:37
+ * @LastEditTime: 2022-05-14 23:50:58
  * @Description: file content
 -->
 
 <script>
 import { defineComponent } from 'vue';
 import { ref, } from 'vue';
-import MySubForm from './MySubForm.vue';
+import MySubForm from './MySubForm1.vue';
 
 export default defineComponent(
   {
@@ -25,7 +25,6 @@ const picked = ref('Tag1')
 
 <template>
   <div>
-  
     <form action="">
       <fieldset>
         <legend>onepis</legend>
@@ -42,7 +41,6 @@ const picked = ref('Tag1')
         <hr />
         <MySubForm :picked="picked">
         </MySubForm>
-        <!-- <component :is="MySubForm" :picked='picked' :tags='tags'/> -->
       </fieldset>
     </form>
 

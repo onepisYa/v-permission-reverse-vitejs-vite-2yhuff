@@ -1,8 +1,8 @@
 <!--
  * @Author: your name
  * @Date: 2022-05-13 00:38:06
- * @LastEditors: onepisYa
- * @LastEditTime: 2022-05-14 19:30:59
+ * @LastEditors: onepisYa pis1@qq.com
+ * @LastEditTime: 2022-05-14 23:06:33
  * @Description: file content
 -->
 <script>
@@ -51,6 +51,7 @@ class ShowTagFactory
     }
   }
 }
+
 const Tags = {
   Tag1: new ShowTagFactory('Tag1'),
   Tag2: new ShowTagFactory('Tag2'),
@@ -91,6 +92,16 @@ const { tag: t } = toRefs(usePicked(props));
 
 <template>
   <div>
+    <template v-for="(value, key) of t" >
+      <div v-show="value">
+        {{key}}=> {{value}}<br>
+        <!-- 假设 我这里的 key 是 组件名字 那么 下面这样写 是不是就可以比较好的控制显示和隐藏了 
+        <component :is="key"></component>
+        -->
+      </div>
+    </template>
+   
+
     {{ t }}
     <div v-show="t.showCheck">
       <input
